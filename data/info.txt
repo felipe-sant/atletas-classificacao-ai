@@ -1,0 +1,57 @@
+ROTULO DOS DADOS
+
+Workload (Carga de trabalho): um número que resume o esforço total do atleta na partida. Combina intensidade e volume. Quem teve 9.6 se esforçou muito mais do que quem teve 0.2.
+
+Sprint Distance (Distância em sprints): quantos metros o atleta correu em velocidade máxima. Diferente de correr normal — sprint é aquele arranque explosivo. Quem teve 0 não fez nenhum sprint.
+
+High Intensity Running — Corrida de Alta Intensidade: quantos metros o atleta correu em ritmo forte, mas sem ser sprint. É a corrida intensa que fica entre o trote e o sprint. Zero significa que o atleta praticamente não correu forte.
+
+Top Speed (Velocidade máxima): a velocidade mais alta que o atleta atingiu durante a partida, em km/h. O atleta "T" atingiu 34,9 km/h no pico.
+
+Accelerations (Acelerações): quantas vezes o atleta arrancou — saiu do parado ou do trote e ganhou velocidade rápido. Cada arrancada conta como uma.
+
+Decelerations (Desacelerações): o oposto — quantas vezes o atleta freou bruscamente. Isso também cansa o músculo, igual à aceleração.
+
+No. of Sprints (Número de sprints): simplesmente quantas vezes o atleta fez um sprint completo durante a partida.
+
+Metres per Minute (Metros por minuto): a distância total dividida pelos minutos jogados. Mede o ritmo médio do atleta. Quem ficou parado ou andou tem um número baixo.
+
+No. of High Intensity Events (Número de eventos de alta intensidade): quantas vezes o atleta fez qualquer ação intensa — seja um sprint, uma arrancada ou uma freada brusca.
+
+- Group, Workload, Sprint Distance, High Intensity Running, Top Speed, Accelerations, Decelerations, No. of Sprints, Metres per Minute, No. of High Intensity Events
+
+---------------------------------------------
+
+POSIÇÕES
+
+
+CBs — Center Backs — Zagueiros
+Os defensores centrais. Ficam na linha de trás protegendo o gol. Por isso têm muitas acelerações e desacelerações (disputas de bola, marcação) mas fazem poucos sprints longos — raramente precisam correr muito espaço em velocidade máxima.
+
+CMs — Central Midfielders — Meias/Volantes
+Jogam no meio de campo. São os atletas que mais correm durante uma partida porque precisam ajudar tanto na defesa quanto no ataque. Por isso têm a maior distância total percorrida e um ritmo (metros por minuto) bem alto e constante.
+
+WBs — Wing Backs — Laterais ou Alas
+Jogam nas laterais do campo e têm uma das funções mais exigentes fisicamente — precisam subir para atacar e voltar para defender o tempo todo. Por isso têm a maior distância total e muitas corridas de alta intensidade.
+
+STs — Strikers — Atacantes/Centroavantes
+Jogam na frente, perto do gol adversário. São os que fazem mais sprints explosivos e atingem as maiores velocidades, porque vivem de arrancadas rápidas para escapar dos zagueiros. Menos volume total, mas altíssima intensidade nos momentos certos.
+
+10s — Meias Ofensivos / Armadores
+O nome vem da camisa 10, tradicional do jogador mais criativo do time. Jogam entre o meio-campo e o ataque. Combinam criatividade com intensidade física — fazem muitos sprints, têm alta velocidade e participam bastante das jogadas ofensivas.
+
+Nulos não tem uma posição definida
+
+10s — Meias Ofensivos / Armadores, STs — Strikers — Atacantes/Centroavantes, WBs — Wing Backs — Laterais ou Alas, CMs — Central Midfielders — Meias/Volantes, CBs — Center Backs — Zagueiros
+
+---------------------------------------------
+
+PROBLEMAS
+
+- Definir o que é alto, medio e baixo desempenho. Dependendo do esporte, contexto e principalmente posição, as categorizações podem mudar :)   
+    - Esse problema pode ser resolvido com uma carga maior de dados e adicionar mais um neuronio de posição do jogador e adicionar peso maior sobre esse neuronio.
+        - Pode dar problema caso a posição esteja nula :(
+            + da pra fazer mais uma IA de classificação de categoria pelo tipo de desgaste do atleta
+            - daria para criar uma categoria neutra, onde ele é categorizado pela média das outras categorias
+            - ou então deixar a posição como obrigatória né, pela mor de deus também
+- Como a rede neural vai lidar com novos dados (a principio eu pensei em algo como entrar novos atletas e ela melhorar a categorização, mas da pra fazer sem isso)
