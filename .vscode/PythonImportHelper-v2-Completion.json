@@ -1,0 +1,82 @@
+[
+    {
+        "label": "predict_atleta",
+        "importPath": "predict",
+        "description": "predict",
+        "isExtraImport": true,
+        "detail": "predict",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "atleta_novo",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "atleta_novo = {\n    \"Group\"                       : \"10s\",\n    \"Workload\"                    : 9,\n    \"Sprint Distance\"             : 35,\n    \"High Intensity Running\"      : 0,\n    \"Top Speed\"                   : 28.1,\n    \"Accelerations\"               : 48,\n    \"Decelerations\"               : 40,\n    \"No. of Sprints\"              : 3,\n    \"Metres per Minute\"           : 0,",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "resultado",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "resultado = predict_atleta(atleta_novo)\nprint(f\"Classificação : {resultado['nome_classe']}\")\nprint(f\"Confiança     : {resultado['confianca']}%\")\nprint(\"Probabilidades:\")\nfor classe, prob in resultado[\"probabilidades\"].items():\n    barra = \"█\" * int(prob / 5)\n    print(f\"  {classe:<20}: {prob:>5.1f}%  {barra}\")",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "predict_atleta",
+        "kind": 2,
+        "importPath": "src.predict",
+        "description": "src.predict",
+        "peekOfCode": "def predict_atleta(dados_atleta: dict) -> dict:\n    norm   = joblib.load(CAMINHO_NORMALIZADOR)\n    modelo_ = joblib.load(CAMINHO_MODELO)\n    posicao_numero = mapa_posicoes.get(dados_atleta.get(\"Group\", \"Indefinido\"),\n                                       mapa_posicoes[\"Indefinido\"])\n    vetor_bruto = np.array([[\n        posicao_numero,\n        dados_atleta[\"Workload\"],\n        dados_atleta[\"Sprint Distance\"],\n        dados_atleta[\"High Intensity Running\"],",
+        "detail": "src.predict",
+        "documentation": {}
+    },
+    {
+        "label": "CAMINHO_NORMALIZADOR",
+        "kind": 5,
+        "importPath": "src.predict",
+        "description": "src.predict",
+        "peekOfCode": "CAMINHO_NORMALIZADOR = \"./model/normalizador_atletas.pkl\" \nNOME_CLASSES = {0: \"Baixo Desempenho\", 1: \"Médio Desempenho\", 2: \"Alto Desempenho\"}\nmapa_posicoes = {pos: i for i, pos in enumerate([\"10s\", \"CBs\", \"CMs\", \"STs\", \"WBs\", \"Indefinido\"])}\ndef predict_atleta(dados_atleta: dict) -> dict:\n    norm   = joblib.load(CAMINHO_NORMALIZADOR)\n    modelo_ = joblib.load(CAMINHO_MODELO)\n    posicao_numero = mapa_posicoes.get(dados_atleta.get(\"Group\", \"Indefinido\"),\n                                       mapa_posicoes[\"Indefinido\"])\n    vetor_bruto = np.array([[\n        posicao_numero,",
+        "detail": "src.predict",
+        "documentation": {}
+    },
+    {
+        "label": "NOME_CLASSES",
+        "kind": 5,
+        "importPath": "src.predict",
+        "description": "src.predict",
+        "peekOfCode": "NOME_CLASSES = {0: \"Baixo Desempenho\", 1: \"Médio Desempenho\", 2: \"Alto Desempenho\"}\nmapa_posicoes = {pos: i for i, pos in enumerate([\"10s\", \"CBs\", \"CMs\", \"STs\", \"WBs\", \"Indefinido\"])}\ndef predict_atleta(dados_atleta: dict) -> dict:\n    norm   = joblib.load(CAMINHO_NORMALIZADOR)\n    modelo_ = joblib.load(CAMINHO_MODELO)\n    posicao_numero = mapa_posicoes.get(dados_atleta.get(\"Group\", \"Indefinido\"),\n                                       mapa_posicoes[\"Indefinido\"])\n    vetor_bruto = np.array([[\n        posicao_numero,\n        dados_atleta[\"Workload\"],",
+        "detail": "src.predict",
+        "documentation": {}
+    },
+    {
+        "label": "mapa_posicoes",
+        "kind": 5,
+        "importPath": "src.predict",
+        "description": "src.predict",
+        "peekOfCode": "mapa_posicoes = {pos: i for i, pos in enumerate([\"10s\", \"CBs\", \"CMs\", \"STs\", \"WBs\", \"Indefinido\"])}\ndef predict_atleta(dados_atleta: dict) -> dict:\n    norm   = joblib.load(CAMINHO_NORMALIZADOR)\n    modelo_ = joblib.load(CAMINHO_MODELO)\n    posicao_numero = mapa_posicoes.get(dados_atleta.get(\"Group\", \"Indefinido\"),\n                                       mapa_posicoes[\"Indefinido\"])\n    vetor_bruto = np.array([[\n        posicao_numero,\n        dados_atleta[\"Workload\"],\n        dados_atleta[\"Sprint Distance\"],",
+        "detail": "src.predict",
+        "documentation": {}
+    }
+]

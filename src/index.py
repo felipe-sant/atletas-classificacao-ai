@@ -1,4 +1,4 @@
-from predict import predict_atleta
+from func.predict import predict_atleta
 
 atleta_novo = {
     "Group"                       : "10s",
